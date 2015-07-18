@@ -54,7 +54,7 @@
         "name": "p_base_freq",
         "min": 0,
         "max": 1,
-        "step": 0.05
+        "step": 0.005
     },
     {
         "description": "Min freq. cutoff",
