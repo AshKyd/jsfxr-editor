@@ -1,0 +1,185 @@
+[
+    {
+        "description": "Type",
+        "name": "p_type",
+        "types": [
+            {
+                "name": "Square wave",
+                "value": 0
+            },
+            {
+                "name": "Sawtooth",
+                "value": 1
+            },
+            {
+                "name": "Sine wave",
+                "value": 2
+            },
+            {
+                "name": "Noise",
+                "value": 3
+            }
+        ]
+    },
+    {
+        "description": "Attack time",
+        "name": "p_env_attack",
+        "min": 0,
+        "max": 1,
+        "step": 0.05
+    },
+    {
+        "description": "Sustain time",
+        "name": "p_env_sustain",
+        "min": 0,
+        "max": 1,
+        "step": 0.05
+    },
+    {
+        "description": "Sustain punch",
+        "name": "p_env_punch",
+        "min": 0,
+        "max": 1,
+        "step": 0.05
+    },
+    {
+        "description": "Decay time",
+        "name": "p_env_decay",
+        "min": 0,
+        "max": 1,
+        "step": 0.05
+    },
+    {
+        "description": "Start frequency",
+        "name": "p_base_freq",
+        "min": 0,
+        "max": 1,
+        "step": 0.05
+    },
+    {
+        "description": "Min freq. cutoff",
+        "name": "p_freq_limit",
+        "min": 0,
+        "max": 1,
+        "step": 0.05
+    },
+    {
+        "description": "Slide",
+        "name": "p_freq_ramp",
+        "min": -1,
+        "max": 1,
+        "step": 0.05
+    },
+    {
+        "description": "Delta slide",
+        "name": "p_freq_dramp",
+        "min": -1,
+        "max": 1,
+        "step": 0.05
+    },
+    {
+        "description": "Vibrato Depth",
+        "name": "p_vib_strength",
+        "min": 0,
+        "max": 1,
+        "step": 0.05
+    },
+    {
+        "description": "Vibrato Speed",
+        "name": "p_vib_speed",
+        "min": 0,
+        "max": 1,
+        "step": 0.05
+    },
+    {
+        "description": "Arpeggiation Frequency mult",
+        "name": "p_arp_mod",
+        "min": -1,
+        "max": 1,
+        "step": 0.05
+    },
+    {
+        "description": "Arpeggiation Change speed",
+        "name": "p_arp_speed",
+        "min": -1,
+        "max": 1,
+        "step": 0.05
+    },
+    {
+        "description": "Duty cycle",
+        "name": "p_duty",
+        "min": 0,
+        "max": 1,
+        "step": 0.05
+    },
+    {
+        "description": "Duty Cycle Sweep",
+        "name": "p_duty_ramp",
+        "min": -1,
+        "max": 1,
+        "step": 0.05
+    },
+    {
+        "description": "Retrigger Rate",
+        "name": "p_repeat_speed",
+        "min": 0,
+        "max": 1,
+        "step": 0.05
+    },
+    {
+        "description": "Flanger Offset",
+        "name": "p_pha_offset",
+        "min": -1,
+        "max": 1,
+        "step": 0.05
+    },
+    {
+        "description": "Flanger Sweep",
+        "name": "p_pha_ramp",
+        "min": -1,
+        "max": 1,
+        "step": 0.05
+    },
+    {
+        "description": "Low-Pass Filter Cutoff frequency",
+        "name": "p_lpf_freq",
+        "min": 0,
+        "max": 1,
+        "step": 0.05
+    },
+    {
+        "description": "Low-Pass Filter Cutoff sweep",
+        "name": "p_lpf_ramp",
+        "min": -1,
+        "max": 1,
+        "step": 0.05
+    },
+    {
+        "description": "Low-Pass Filter Resonance",
+        "name": "p_lpf_resonance",
+        "min": 0,
+        "max": 1,
+        "step": 0.05
+    },
+    {
+        "description": "High-Pass Filter Cutoff frequency",
+        "name": "p_hpf_freq",
+        "min": 0,
+        "max": 1,
+        "step": 0.05
+    },
+    {
+        "description": "High-Pass Filter Cutoff sweep",
+        "name": "p_hpf_ramp",
+        "min": -1,
+        "max": 1,
+        "step": 0.05
+    },
+    {
+        "description": "Master volume",
+        "name": "p_volume",
+        "min": 0,
+        "max": 1,
+        "step": 0.05
+    }
+]

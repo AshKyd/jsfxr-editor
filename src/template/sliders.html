@@ -1,0 +1,272 @@
+<div class="row">
+    <div class="col-sm-4 meta">
+        <div class="actions btn-group">
+            <button class="btn btn-default" on-click="action" data-action="play">Play</button>
+            <button class="btn btn-default" on-click="action" data-action="reset">Reset</button>
+        </div>
+        <hr>
+        <div class="form-group">
+            <label for="p_type">Wave type</label>
+            <select value='{{p_type.value}}' id="p_type" name="pp_type">
+              {{#each p_type.meta.types}}
+                <option value="{{value}}">{{name}}</option>
+              {{/each}}
+            </select>
+        </div>
+        <hr>
+        <div class="form-group">
+            <label for="p_volume">Volume</label>
+            <input type="range" min="{{p_volume.meta.min}}" max="{{p_volume.meta.max}}" step="{{p_volume.meta.step}}" value="{{p_volume.value}}" name="p_volume" id="p_volume">
+        </div>
+        <hr>
+        <div class="form-group">
+            <label for="string_val">Config string</label>
+            <input type="input" on-input="stringchange" value="{{string_val}}" name="string_val" id="string_val">
+        </div>
+        <hr>
+        <h3>Presets</h3>
+
+        <div class="presets btn-group-vertical">
+            <button class="btn btn-default" on-click="action" data-action="generateBlipSelect">Blip/select</button>
+            <button class="btn btn-default" on-click="action" data-action="generateJump">Jump</button>
+            <button class="btn btn-default" on-click="action" data-action="generatePickupCoin">Pickup coin</button>
+            <button class="btn btn-default" on-click="action" data-action="generateLaserShoot">Laser shoot</button>
+            <button class="btn btn-default" on-click="action" data-action="generateExplosion">Explosion</button>
+            <button class="btn btn-default" on-click="action" data-action="generateHit">Hitpoint</button>
+            <button class="btn btn-default" on-click="action" data-action="generatePowerup">Powerup</button>
+        </div>
+
+    </div>
+  <div class="col-sm-8 sliders">
+      <table class="table">
+          <tbody>
+              <tr>
+                  <th colspan="3">Envelope</th>
+              </tr>
+              <tr>
+                  <td>
+                      <label for="p_env_attack">Attack time</label>
+                  </td>
+                  <td>
+                      <input type="range" class="slider" min="{{p_env_attack.meta.min}}" max="{{p_env_attack.meta.max}}" step="{{p_env_attack.meta.step}}" value="{{p_env_attack.value}}" name="p_env_attack" id="p_env_attack">
+                  </td>
+                  <td class="val">{{p_env_attack.value}}</td>
+              </tr>
+              <tr>
+                  <td>
+                      <label for="p_env_sustain">Sustain time</label>
+                  </td>
+                  <td>
+                      <input type="range" class="slider" min="{{p_env_sustain.meta.min}}" max="{{p_env_sustain.meta.max}}" step="{{p_env_sustain.meta.step}}" value="{{p_env_sustain.value}}" name="p_env_sustain" id="p_env_sustain">
+                  </td>
+                  <td class="val">{{p_env_sustain.value}}</td>
+              </tr>
+              <tr>
+                  <td>
+                      <label for="p_env_punch">Sustain punch</label>
+                  </td>
+                  <td>
+                      <input type="range" class="slider" min="{{p_env_punch.meta.min}}" max="{{p_env_punch.meta.max}}" step="{{p_env_punch.meta.step}}" value="{{p_env_punch.value}}" name="p_env_punch" id="p_env_punch">
+                  </td>
+                  <td class="val">{{p_env_punch.value}}</td>
+              </tr>
+              <tr>
+                  <td>
+                      <label for="p_env_decay">Decay time</label>
+                  </td>
+                  <td>
+                      <input type="range" class="slider" min="{{p_env_decay.meta.min}}" max="{{p_env_decay.meta.max}}" step="{{p_env_decay.meta.step}}" value="{{p_env_decay.value}}" name="p_env_decay" id="p_env_decay">
+                  </td>
+                  <td class="val">{{p_env_decay.value}}</td>
+              </tr>
+              <tr>
+                  <th colspan="3">Frequency</th>
+              </tr>
+              <tr>
+                  <td>
+                      <label for="p_base_freq">Start frequency</label>
+                  </td>
+                  <td>
+                      <input type="range" class="slider" min="{{p_base_freq.meta.min}}" max="{{p_base_freq.meta.max}}" step="{{p_base_freq.meta.step}}" value="{{p_base_freq.value}}" name="p_base_freq" id="p_base_freq">
+                  </td>
+                  <td class="val">{{p_base_freq.value}}</td>
+              </tr>
+              <tr>
+                  <td>
+                      <label for="p_freq_limit">Min freq. cutoff</label>
+                  </td>
+                  <td>
+                      <input type="range" class="slider" min="{{p_freq_limit.meta.min}}" max="{{p_freq_limit.meta.max}}" step="{{p_freq_limit.meta.step}}" value="{{p_freq_limit.value}}" name="p_freq_limit" id="p_freq_limit">
+                  </td>
+                  <td class="val">{{p_freq_limit.value}}</td>
+              </tr>
+              <tr>
+                  <td>
+                      <label for="p_freq_ramp">Slide</label>
+                  </td>
+                  <td>
+                      <input type="range" class="signed slider" min="{{p_freq_ramp.meta.min}}" max="{{p_freq_ramp.meta.max}}" step="{{p_freq_ramp.meta.step}}" value="{{p_freq_ramp.value}}" name="p_freq_ramp" id="p_freq_ramp">
+                  </td>
+                  <td class="val">{{p_freq_ramp.value}}</td>
+              </tr>
+              <tr>
+                  <td>
+                      <label for="p_freq_dramp">Delta slide</label>
+                  </td>
+                  <td>
+                      <input type="range" class="signed slider" min="{{p_freq_dramp.meta.min}}" max="{{p_freq_dramp.meta.max}}" step="{{p_freq_dramp.meta.step}}" value="{{p_freq_dramp.value}}" name="p_freq_dramp" id="p_freq_dramp">
+                  </td>
+                  <td class="val">{{p_freq_dramp.value}}</td>
+              </tr>
+              <tr>
+                  <th colspan="3">Vibrato</th>
+              </tr>
+              <tr>
+                  <td>
+                      <label for="p_vib_strength">Depth</label>
+                  </td>
+                  <td>
+                      <input type="range" class="slider" min="{{p_vib_strength.meta.min}}" max="{{p_vib_strength.meta.max}}" step="{{p_vib_strength.meta.step}}" value="{{p_vib_strength.value}}" name="p_vib_strength" id="p_vib_strength">
+                  </td>
+                  <td class="val">{{p_vib_strength.value}}</td>
+              </tr>
+              <tr>
+                  <td>
+                      <label for="p_vib_speed">Speed</label>
+                  </td>
+                  <td>
+                      <input type="range" class="slider" min="{{p_vib_speed.meta.min}}" max="{{p_vib_speed.meta.max}}" step="{{p_vib_speed.meta.step}}" value="{{p_vib_speed.value}}" name="p_vib_speed" id="p_vib_speed">
+                  </td>
+                  <td class="val">{{p_vib_speed.value}}</td>
+              </tr>
+              <tr>
+                  <th colspan="3">Arpeggiation</th>
+              </tr>
+              <tr>
+                  <td>
+                      <label for="p_arp_mod">Frequency mult</label>
+                  </td>
+                  <td>
+                      <input type="range" class="signed slider" min="{{p_arp_mod.meta.min}}" max="{{p_arp_mod.meta.max}}" step="{{p_arp_mod.meta.step}}" value="{{p_arp_mod.value}}" name="p_arp_mod" id="p_arp_mod">
+                  </td>
+                  <td class="val">{{p_arp_mod.value}}</td>
+              </tr>
+              <tr>
+                  <td>
+                      <label for="p_arp_speed">Change speed</label>
+                  </td>
+                  <td>
+                      <input type="range" class="slider" min="{{p_arp_speed.meta.min}}" max="{{p_arp_speed.meta.max}}" step="{{p_arp_speed.meta.step}}" value="{{p_arp_speed.value}}" name="p_arp_speed" id="p_arp_speed">
+                  </td>
+                  <td class="val">{{p_arp_speed.value}}</td>
+              </tr>
+              <tr>
+                  <th colspan="3">Duty Cycle</th>
+              </tr>
+              <tr>
+                  <td>
+                      <label for="p_duty">Duty cycle</label>
+                  </td>
+                  <td>
+                      <input type="range" class="slider" min="{{p_duty.meta.min}}" max="{{p_duty.meta.max}}" step="{{p_duty.meta.step}}" value="{{p_duty.value}}" name="p_duty" id="p_duty">
+                  </td>
+                  <td class="val">{{p_duty.value}}</td>
+              </tr>
+              <tr>
+                  <td>
+                      <label for="p_duty_ramp">Sweep</label>
+                  </td>
+                  <td>
+                      <input type="range" class="signed slider" min="{{p_duty_ramp.meta.min}}" max="{{p_duty_ramp.meta.max}}" step="{{p_duty_ramp.meta.step}}" value="{{p_duty_ramp.value}}" name="p_duty_ramp" id="p_duty_ramp">
+                  </td>
+                  <td class="val">{{p_duty_ramp.value}}</td>
+              </tr>
+              <tr>
+                  <th colspan="3">Retrigger</th>
+              </tr>
+              <tr>
+                  <td>
+                      <label for="p_repeat_speed">Rate</label>
+                  </td>
+                  <td>
+                      <input type="range" class="slider" min="{{p_repeat_speed.meta.min}}" max="{{p_repeat_speed.meta.max}}" step="{{p_repeat_speed.meta.step}}" value="{{p_repeat_speed.value}}" name="p_repeat_speed" id="p_repeat_speed">
+                  </td>
+                  <td class="val">{{p_repeat_speed.value}}</td>
+              </tr>
+              <tr>
+                  <th colspan="3">Flanger</th>
+              </tr>
+              <tr>
+                  <td>
+                      <label for="p_pha_offset">Offset</label>
+                  </td>
+                  <td>
+                      <input type="range" class="signed slider" min="{{p_pha_offset.meta.min}}" max="{{p_pha_offset.meta.max}}" step="{{p_pha_offset.meta.step}}" value="{{p_pha_offset.value}}" name="p_pha_offset" id="p_pha_offset">
+                  </td>
+                  <td class="val">{{p_pha_offset.value}}</td>
+              </tr>
+              <tr>
+                  <td>
+                      <label for="p_pha_ramp">Sweep</label>
+                  </td>
+                  <td>
+                      <input type="range" class="signed slider" min="{{p_pha_ramp.meta.min}}" max="{{p_pha_ramp.meta.max}}" step="{{p_pha_ramp.meta.step}}" value="{{p_pha_ramp.value}}" name="p_pha_ramp" id="p_pha_ramp">
+                  </td>
+                  <td class="val">{{p_pha_ramp.value}}</td>
+              </tr>
+              <tr>
+                  <th colspan="3">Low-Pass Filter</th>
+              </tr>
+              <tr>
+                  <td>
+                      <label for="p_lpf_freq">Cutoff frequency</label>
+                  </td>
+                  <td>
+                      <input type="range" class="slider" min="{{p_lpf_freq.meta.min}}" max="{{p_lpf_freq.meta.max}}" step="{{p_lpf_freq.meta.step}}" value="{{p_lpf_freq.value}}" name="p_lpf_freq" id="p_lpf_freq">
+                  </td>
+                  <td class="val">{{p_lpf_freq.value}}</td>
+              </tr>
+              <tr>
+                  <td>
+                      <label for="p_lpf_ramp">Cutoff sweep</label>
+                  </td>
+                  <td>
+                      <input type="range" class="signed slider" min="{{p_lpf_ramp.meta.min}}" max="{{p_lpf_ramp.meta.max}}" step="{{p_lpf_ramp.meta.step}}" value="{{p_lpf_ramp.value}}" name="p_lpf_ramp" id="p_lpf_ramp">
+                  </td>
+                  <td class="val">{{p_lpf_ramp.value}}</td>
+              </tr>
+              <tr>
+                  <td>
+                      <label for="p_lpf_resonance">Resonance</label>
+                  </td>
+                  <td>
+                      <input type="range" class="slider" min="{{p_lpf_resonance.meta.min}}" max="{{p_lpf_resonance.meta.max}}" step="{{p_lpf_resonance.meta.step}}" value="{{p_lpf_resonance.value}}" name="p_lpf_resonance" id="p_lpf_resonance">
+                  </td>
+                  <td class="val">{{p_lpf_resonance.value}}</td>
+              </tr>
+              <tr>
+                  <th colspan="3">High-Pass Filter</th>
+              </tr>
+              <tr>
+                  <td>
+                      <label for="p_hpf_freq">Cutoff frequency</label>
+                  </td>
+                  <td>
+                      <input type="range" class="slider" min="{{p_hpf_freq.meta.min}}" max="{{p_hpf_freq.meta.max}}" step="{{p_hpf_freq.meta.step}}" value="{{p_hpf_freq.value}}" name="p_hpf_freq" id="p_hpf_freq">
+                  </td>
+                  <td class="val">{{p_hpf_freq.value}}</td>
+              </tr>
+              <tr>
+                  <td>
+                      <label for="p_hpf_ramp">Cutoff sweep</label>
+                  </td>
+                  <td>
+                      <input type="range" class="signed slider" min="{{p_hpf_ramp.meta.min}}" max="{{p_hpf_ramp.meta.max}}" step="{{p_hpf_ramp.meta.step}}" value="{{p_hpf_ramp.value}}" name="p_hpf_ramp" id="p_hpf_ramp">
+                  </td>
+                  <td class="val">{{p_hpf_ramp.value}}</td>
+              </tr>
+          </tbody>
+      </table>
+
+  </div>
+</div>
