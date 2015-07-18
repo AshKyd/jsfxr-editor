@@ -3,6 +3,8 @@ jsfxr-editor
 
 A web-based frontend to jsfxr that you can embed in your own app.
 
+[Try it out](http://ashkyd.github.io/jsfxr-editor/).
+
 This is a cross between [as3sfxr](https://github.com/SFBTom/as3sfxr)
 and Eric Fredricksen's [jsfxr](https://github.com/grumdrig/jsfxr)
 frontend (not to be confused with Markus Neubrand's
